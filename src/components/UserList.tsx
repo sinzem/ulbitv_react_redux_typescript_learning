@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useTypedSelector } from "../hooks/useTypedSelector";
 
 const UserList: React.FC = () => {
 
-    const state = useSelector(state => state);
+    const {users, error, loading} = useTypedSelector(state => state.user); /* (для получения состояний используем типизированный useSelector - useTypedSelector, без типизации не выдаст user) */
 
     return (
         <div>
@@ -12,4 +13,4 @@ const UserList: React.FC = () => {
     )
 }
 
-export default UserList: React.FC;
+export default UserList;
